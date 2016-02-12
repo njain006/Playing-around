@@ -1,0 +1,8 @@
+def rec_fib(n):
+	if n == 0 : return 0
+	elif n == 1 or n == 2: return 1
+	
+	return rec_fib (n-2) + (n-1)
+
+for num in range(20):
+	print (rec_fib(num))

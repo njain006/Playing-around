@@ -1,0 +1,53 @@
+
+class merge_sort:
+
+	def __init__(self):
+		self.list_values = [8,7,2,78,5,85,5,5,6,7,7,7,9]
+		self.high = len(self.list_values)
+		self.lower = round(self.high/2)
+		self.higher = round(self.high/2)
+		self.lower_list = []
+		self.higher_list = []
+
+	def sorting_algo(self,alist):
+		k = 0
+		i = 0
+		j = 0		
+		print("Splitting ",alist)
+		if len(alist)>1:
+			mid = len(alist)//2
+			lefthalf = alist[:mid]
+			righthalf = alist[mid:]
+
+
+			Merge.sorting_algo(lefthalf)
+			Merge.sorting_algo(righthalf)
+
+			
+			while (i < len(lefthalf) and j < len(righthalf)):
+
+				if lefthalf[i] < righthalf[j]:
+					alist[k] = lefthalf[i]
+					i = i+1				
+				else: 
+					alist[k] = righthalf[j]
+					j = j+1
+				k = k+1
+
+			while i < len(lefthalf):
+				alist[k] = lefthalf[i]
+				i = i+1
+				k = k+1
+					
+			while j < len(righthalf):
+				alist[k] = righthalf[j]
+				j = j+1
+				k = k+1
+
+			print (alist)
+
+
+if __name__ == "__main__":  
+	Merge = merge_sort()
+	list_values = [8,7,2,78,5,85,5,5,6,7,7,7,9]
+	Merge.sorting_algo(list_values)
